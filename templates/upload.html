@@ -1,0 +1,214 @@
+{% extends "basic.html" %}
+<!DOCTYPE html>
+
+<html lang="en-us" >
+{% block head %}
+
+
+<head>
+<title>Add blog | Django site admin</title>
+<link rel="stylesheet" type="text/css" href="/static/admin/css/base.css">
+<link rel="stylesheet" type="text/css" href="/static/admin/css/forms.css">
+
+
+<script type="text/javascript" src="/admin/jsi18n/"></script>
+<script type="text/javascript" src="/static/admin/js/vendor/jquery/jquery.js"></script>
+<script type="text/javascript" src="/static/admin/js/jquery.init.js"></script>
+<script type="text/javascript" src="/static/admin/js/core.js"></script>
+<script type="text/javascript" src="/static/admin/js/admin/RelatedObjectLookups.js"></script>
+<script type="text/javascript" src="/static/admin/js/actions.js"></script>
+<script type="text/javascript" src="/static/admin/js/urlify.js"></script>
+<script type="text/javascript" src="/static/admin/js/prepopulate.js"></script>
+<script type="text/javascript" src="/static/admin/js/vendor/xregexp/xregexp.js"></script>
+
+
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/static/admin/css/responsive.css">
+    
+
+<meta name="robots" content="NONE,NOARCHIVE">
+ <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.3"></script>
+    <title>Blog's</title>
+
+    
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+        .jumbotron {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+        margin-bottom: 0;
+        background-color: #fff;
+        }
+        @media (min-width: 768px) {
+        .jumbotron {
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+        }
+        }
+
+        .jumbotron p:last-child {
+        margin-bottom: 0;
+        }
+
+        .jumbotron-heading {
+        font-weight: 300;
+        }
+
+        .jumbotron .container {
+        max-width: 40rem;
+        }
+
+        footer {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+        }
+
+        footer p {
+        margin-bottom: .25rem;
+        }
+
+        .card-body{
+            height:170px;
+        }
+        .card-text{
+            height:85px;
+            overflow:hidden;
+        }
+       
+    </style>
+</head>
+{% endblock head %}
+{% block body %}
+
+
+<body class=" app-blogapp model-blog change-form"
+  data-admin-utc-offset="0">
+
+<!-- Container -->
+<div id="container">
+    <!-- Content -->
+    <div id="content" class="colM">
+        
+        <h1>Add blog</h1>
+        <div id="content-main">
+
+<form enctype="multipart/form-data" action="upload/" method="post" id="blog_form" novalidate><input type="hidden" name="csrfmiddlewaretoken" value="dKRBrOZx8bLIwnq5qTPxGA8zEo5gcb9h0y0PYwijpXWVFhbVzYDYr9NjMFl3FbFy">
+{% csrf_token %}
+<div>
+
+  <fieldset class="module aligned ">
+     
+        <div class="form-row field-img">           
+                <div>
+                     <label class="required" for="id_img">Img:</label>
+                            <input type="file" name="img" accept="image/*" required id="id_img">  
+                </div>
+        </div>
+        <div class="form-row field-img2">
+                <div>
+                        <label class="required" for="id_img2">Img2:</label>   
+                            <input type="file" name="img2" accept="image/*" required id="id_img2">
+                </div>
+        </div>  
+        <div class="form-row field-title">
+                <div>                   
+                        <label class="required" for="id_title">Title:</label>
+                        
+                            <textarea name="title" cols="40" rows="10" class="vLargeTextField" required id="id_title">
+</textarea>
+               </div>            
+        </div>
+        <div class="form-row field-subtitle">        
+                <div>
+                        <label class="required" for="id_subtitle">Subtitle:</label>   
+                            <textarea name="subtitle" cols="40" rows="10" class="vLargeTextField" required id="id_subtitle">
+</textarea>  
+                </div>
+        </div>
+        <div class="form-row field-sub2title">
+                <div>
+                   <label class="required" for="id_sub2title">Sub2title:</label>
+                        
+                            <textarea name="sub2title" cols="40" rows="10" class="vLargeTextField" required id="id_sub2title">
+</textarea>         
+                </div>
+            
+        </div>
+    
+        <div class="form-row field-content_at">    
+                <div>
+                        <label class="required" for="id_content_at">Content at:</label>
+                        
+                            <textarea name="content_at" cols="40" rows="10" class="vLargeTextField" required id="id_content_at">
+</textarea>
+                </div>
+        </div>
+        <div class="form-row field-content_as">
+            <div>
+                        <label class="required" for="id_content_as">Content as:</label>
+                                 <textarea name="content_as" cols="40" rows="10" class="vLargeTextField" required id="id_content_as">
+</textarea>
+                </div>
+        </div>
+        <div class="form-row field-content_as2">
+                <div>
+                        <label class="required" for="id_content_as2">Content as2:</label>
+                                  <textarea name="content_as2" cols="40" rows="10" class="vLargeTextField" required id="id_content_as2">
+</textarea>
+                </div>     
+        </div>
+    
+</fieldset>
+
+<div class="submit-row">
+
+<input type="submit" value="Save" class="default" name="_save">
+
+</div>
+    <script type="text/javascript"
+            id="django-admin-form-add-constants"
+            src="/static/admin/js/change_form.js"
+            
+                data-model-name="blog"
+            >
+    </script>
+
+<script type="text/javascript"
+        id="django-admin-prepopulated-fields-constants"
+        src="/static/admin/js/prepopulate_init.js"
+        data-prepopulated-fields="[]">
+</script>
+</div>
+</form></div>
+
+        
+        <br class="clear">
+    </div>
+    <!-- END Content -->
+
+    <div id="footer"></div>
+</div>
+<!-- END Container -->
+
+</body>
+{% endblock body %}
+</html>
